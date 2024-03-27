@@ -57,6 +57,7 @@ export function ClientSolutions() {
                   <feature.icon
                     className="h-6 w-6 text-white"
                     aria-hidden="true"
+                    strokeWidth="1.5"
                   />
                 </div>
                 {feature.name}
