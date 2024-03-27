@@ -158,7 +158,14 @@ export function Header() {
             <div className="hidden md:block">
               <NavLink href="/login">Sign in</NavLink>
             </div>
-            <Button href="/register" color="blue">
+            <Button
+              href="#register"
+              color="blue"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("contact-form");
+              }}
+            >
               <span>
                 Get started <span className="hidden lg:inline">today</span>
               </span>
