@@ -1,27 +1,27 @@
-'use client'
+"use client";
 
-import { Fragment } from 'react'
-import Link from 'next/link'
-import { Popover, Transition } from '@headlessui/react'
-import clsx from 'clsx'
+import { Fragment, useEffect, useState } from "react";
+import Link from "next/link";
+import { Popover, Transition } from "@headlessui/react";
+import clsx from "clsx";
 
-import { Button } from '@/components/Button'
-import { Container } from '@/components/Container'
-import { Logo } from '@/components/Logo'
-import { NavLink } from '@/components/NavLink'
+import { Button } from "@/components/Button";
+import { Container } from "@/components/Container";
+import { Logo } from "@/components/Logo";
+import { NavLink } from "@/components/NavLink";
 
 function MobileNavLink({
   href,
   children,
 }: {
-  href: string
-  children: React.ReactNode
+  href: string;
+  children: React.ReactNode;
 }) {
   return (
     <Popover.Button as={Link} href={href} className="block w-full p-2">
       {children}
     </Popover.Button>
-  )
+  );
 }
 
 function MobileNavIcon({ open }: { open: boolean }) {
@@ -36,19 +36,19 @@ function MobileNavIcon({ open }: { open: boolean }) {
       <path
         d="M0 1H14M0 7H14M0 13H14"
         className={clsx(
-          'origin-center transition',
-          open && 'scale-90 opacity-0',
+          "origin-center transition",
+          open && "scale-90 opacity-0"
         )}
       />
       <path
         d="M2 2L12 12M12 2L2 12"
         className={clsx(
-          'origin-center transition',
-          !open && 'scale-90 opacity-0',
+          "origin-center transition",
+          !open && "scale-90 opacity-0"
         )}
       />
     </svg>
-  )
+  );
 }
 
 function MobileNavigation() {
@@ -85,31 +85,73 @@ function MobileNavigation() {
             as="div"
             className="absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5"
           >
-            <MobileNavLink href="#features">Features</MobileNavLink>
-            <MobileNavLink href="#testimonials">Testimonials</MobileNavLink>
-            <MobileNavLink href="#pricing">Pricing</MobileNavLink>
+            <MobileNavLink href="#features">Client Solutions</MobileNavLink>
+            <MobileNavLink href="#testimonials">Process</MobileNavLink>
+            <MobileNavLink href="#pricing">Careers</MobileNavLink>
             <hr className="m-2 border-slate-300/40" />
             <MobileNavLink href="/login">Sign in</MobileNavLink>
           </Popover.Panel>
         </Transition.Child>
       </Transition.Root>
     </Popover>
-  )
+  );
 }
 
+const scrollToSection = (id: string) => {
+  const section = document.getElementById(id);
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
 export function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset;
+      setIsScrolled(scrollTop > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="py-10">
+    <header
+      className={`fixed top-0 left-0 right-0 bg-white py-6 z-[9999] ${
+        isScrolled ? "shadow-md" : ""
+      } py-10`}
+    >
       <Container>
-        <nav className="relative z-50 flex justify-between">
+        <nav className="relative flex justify-between">
           <div className="flex items-center md:gap-x-12">
-            <Link href="#" aria-label="Home">
+            <Link href="/" aria-label="Home">
               <Logo className="h-10 w-auto" />
             </Link>
             <div className="hidden md:flex md:gap-x-6">
-              <NavLink href="#features">Features</NavLink>
-              <NavLink href="#testimonials">Testimonials</NavLink>
-              <NavLink href="#pricing">Pricing</NavLink>
+              <NavLink
+                href="#features"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("client-solutions");
+                }}
+              >
+                Client Solutions
+              </NavLink>
+              <NavLink
+                href="#process"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("process");
+                }}
+              >
+                Client Solutions
+              </NavLink>
+              <NavLink href="/careers">Careers</NavLink>
             </div>
           </div>
           <div className="flex items-center gap-x-5 md:gap-x-8">
@@ -128,5 +170,5 @@ export function Header() {
         </nav>
       </Container>
     </header>
-  )
+  );
 }
