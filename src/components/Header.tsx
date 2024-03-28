@@ -149,7 +149,7 @@ export function Header() {
                   scrollToSection("process");
                 }}
               >
-                Client Solutions
+                How it works
               </NavLink>
               <NavLink href="/careers">Careers</NavLink>
             </div>
