@@ -122,7 +122,7 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 bg-white py-6 z-[9999] ${
+      className={`fixed top-0 left-0 right-0 bg-white py-5 z-[9999] ${
         isScrolled ? "shadow-md" : ""
       } py-10`}
     >
