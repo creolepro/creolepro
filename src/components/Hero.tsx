@@ -1,7 +1,8 @@
-import Image from "next/image";
+"use client";
 
 import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
+import Typewriter from "typewriter-effect";
 
 export function Hero() {
   return (
@@ -11,7 +12,20 @@ export function Hero() {
         <span className="relative whitespace-nowrap">
           <span className="relative text-haiti-blue">Haitian Creole</span>
         </span>{" "}
-        Translations For Your Business
+        Translations For Your{" "}
+        <Typewriter
+          options={{
+            strings: [
+              "Business",
+              "Documents",
+              "Website",
+              "Marketing Materials",
+              "Technical Documents",
+            ],
+            autoStart: true,
+            loop: true,
+          }}
+        />
       </h1>
       <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
         Our team of native and expert matter translators are fluent in Haitian
