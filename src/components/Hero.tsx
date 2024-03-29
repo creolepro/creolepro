@@ -7,7 +7,7 @@ import Typewriter from "typewriter-effect";
 export function Hero() {
   return (
     <Container className="pb-20 pt-48 my-20 text-center">
-      <h1 className="mx-auto max-w-4xl font-display text-4xl font-bold tracking-tight text-slate-900 sm:text-6xl">
+      <h1 className="mx-auto max-w-4xl font-display text-4xl font-bold tracking-tight text-slate-900 sm:text-6xl min-h-[180px]">
         Professional{" "}
         <span className="relative whitespace-nowrap">
           <span className="relative text-haiti-blue">Haitian Creole</span>
@@ -17,10 +17,10 @@ export function Hero() {
           options={{
             strings: [
               "Business",
-              "Documents",
               "Website",
               "Marketing Materials",
               "Technical Documents",
+              "Medical Documents",
             ],
             autoStart: true,
             loop: true,
