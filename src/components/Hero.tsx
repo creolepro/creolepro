@@ -21,6 +21,8 @@ export function Hero() {
               "Marketing Materials",
               "Technical Documents",
               "Medical Documents",
+              "Legal Documents",
+              "School Materials",
             ],
             autoStart: true,
             loop: true,
