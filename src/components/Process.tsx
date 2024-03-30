@@ -10,9 +10,9 @@ export default function Process() {
       icon: FileCheck2,
     },
     {
-      name: "Confirm",
+      name: "Confirmation",
       description:
-        "We'll get in touch to confirm details, requirements and pricing.",
+        "We'll get in touch to confirm details, requirements, and pricing.",
       icon: UserCheck,
     },
     {
@@ -23,7 +23,8 @@ export default function Process() {
     },
     {
       name: "Delivery",
-      description: "That's it! We'll deliver your translations via email.",
+      description:
+        "That's it! Your translated project is promptly delivered via one of our secured file sharing processes.",
       icon: BadgeCheck,
     },
   ];
@@ -42,10 +43,8 @@ export default function Process() {
             Order your translations in 4 easy steps
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg font-normal text-gray-700 lg:text-xl lg:leading-8">
-            We work closely with our clients to ensure that our translation
-            services meet their specific requirements, and pride ourselves on
-            delivering high-quality translation services within the agreed
-            timeframe.
+            Discover how our streamlined translation process ensures seamless
+            project delivery
           </p>
         </div>
         <ul className="mx-auto mt-12 grid max-w-md grid-cols-1 gap-10 sm:mt-16 lg:mt-20 mr-4 lg:max-w-5xl lg:grid-cols-4">
