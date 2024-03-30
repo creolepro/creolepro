@@ -45,7 +45,7 @@ export default function ContactForm() {
           {`Get your free quote`}
         </h2>
         <p className="my-6 text-lg leading-8 text-gray-600">
-          {`Join our team! We're actively seeking talented translators and interpreters to shape language excellence with us.`}
+          {`Expand your reach! We will work with you closely to bridge the language barriers gaps.`}
         </p>
       </div>
       <form
