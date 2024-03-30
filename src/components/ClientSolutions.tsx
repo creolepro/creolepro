@@ -9,7 +9,7 @@ export function ClientSolutions() {
     {
       name: "Document Translation",
       description:
-        "Our team of professional translators can accurately translate your documents, including legal documents, contracts, reports, and more.",
+        "Our document translation services are tailored to our clients’ requirements in the healthcare, legal and educational sector. Count on us for the translation of your discharge summaries, patient education materials, consent forms, parent communication, special education documents, training, legal correspondence to break the language barriers with the Haitian Creole speakers.",
       icon: FileText,
     },
     {
