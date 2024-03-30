@@ -15,7 +15,7 @@ export function ClientSolutions() {
     {
       name: "Website Translation",
       description:
-        "We help businesses expand their global reach by providing website translation services, ensuring that their website content is accurately translated into the target language, and resonates with the target audience.",
+        "We help businesses expand their global reach by providing website translation services, ensuring that their website content is accurately translated into Haitian Creole and resonates with Haitian Creole speakers.",
       icon: PanelsTopLeft,
     },
     {
