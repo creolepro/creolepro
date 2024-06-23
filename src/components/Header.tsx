@@ -9,6 +9,7 @@ import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
 import { Logo } from "@/components/Logo";
 import { NavLink } from "@/components/NavLink";
+import { Phone } from "lucide-react";
 
 function MobileNavLink({
   href,
@@ -126,7 +127,7 @@ export function Header() {
         isScrolled ? "shadow-md" : ""
       } py-10`}
     >
-      <Container>
+      <Container className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="relative flex justify-between">
           <div className="flex items-center md:gap-x-12">
             <Link href="/" aria-label="Home">
@@ -163,10 +164,20 @@ export function Header() {
               <NavLink href="/careers">Careers</NavLink>
             </div>
           </div>
-          <div className="flex items-center gap-x-5 md:gap-x-8">
-            <div className="hidden md:block">
-              <NavLink href="/login">Sign in</NavLink>
-            </div>
+          <div className="flex items-center gap-x-5 md:gap-x-4">
+            <Phone
+              className="h-5 w-5 text-gray-900"
+              aria-hidden="true"
+              strokeWidth="1.5"
+            />
+            <Link href="tel:+18007771123" className="text-slate-800 text-md">
+              <p className="text-slate-800 text-md">+1(800) 777-1123</p>
+            </Link>
+            <Button href="/login" variant="outline">
+              <div className="hidden md:block">
+                <span>Sign in</span>
+              </div>
+            </Button>
             <Button
               href="#register"
               color="blue"
