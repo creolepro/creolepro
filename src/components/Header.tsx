@@ -151,7 +151,15 @@ export function Header() {
               >
                 How it works
               </NavLink>
-              <NavLink href="#choose">Why Choose Us?</NavLink>
+              <NavLink
+                href="#choose"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("choose");
+                }}
+              >
+                Why Choose Us?
+              </NavLink>
               <NavLink href="/careers">Careers</NavLink>
             </div>
           </div>
