@@ -51,10 +51,9 @@ export default function Choose() {
                 Expert Haitian Creole Translations at Your Service
               </p>
               <p className="mt-6 text-base leading-7 text-gray-600">
-                At Creolepro we prioritize the cultural and linguistic needs of
-                our clients. Our cutting-edge language solutions are designed to
-                reflect and respect the diverse contexts demonstrated by the
-                individuals, organizations and communities that we serve.
+                Our team of Haitian expert matter translators can help you
+                communicate your message accurately and effectively in Haitian
+                Creole.
               </p>
             </div>
             <dl className="col-span-2 grid grid-cols-1 gap-x-8 gap-y-10 text-base leading-7 text-gray-600 sm:grid-cols-2 lg:gap-y-16">
