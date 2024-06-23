@@ -2,7 +2,14 @@
 
 import React from "react";
 
-import { PanelsTopLeft, FileText, ScrollText, StickyNote } from "lucide-react";
+import {
+  PanelsTopLeft,
+  FileText,
+  ScrollText,
+  StickyNote,
+  BookCheck,
+  NotebookPen,
+} from "lucide-react";
 
 export function ClientSolutions() {
   const solutions = [
@@ -13,9 +20,9 @@ export function ClientSolutions() {
       icon: FileText,
     },
     {
-      name: "Website Translation",
+      name: "Website Translation & Localization",
       description:
-        "We help businesses expand their global reach by providing website translation services, ensuring that their website content is accurately translated into Haitian Creole and resonates with Haitian Creole speakers.",
+        "Our language services will enable you to usher your organization’s reach within the Haitian Communities. Our project managers will ensure your website content is accurately translated and culturally adapted. With Creolepro localization services your website, software, application, multimedia content engaging and resonating translation tailored to your requirements and the Haitian Creole audience.",
       icon: PanelsTopLeft,
     },
     {
@@ -29,6 +36,18 @@ export function ClientSolutions() {
       description:
         "Our technical translation services ensure that your technical documents, including user manuals, product specifications, and technical reports, are translated accurately and effectively, ensuring that your message is clearly conveyed to your target audience.",
       icon: ScrollText,
+    },
+    {
+      name: "Language Testing",
+      description:
+        "Creolepro offers comprehensive language testing solutions to evaluate the language skills of your team members or potential candidates. Whether you need testing for translation, interpretation, or other language-related roles, we provide reliable and standardized Haitian Creole assessments to support your hiring and training decisions. We offer Language Testing Services based on the Interagency Language Roundtable (ILR) scale, a widely recognized and respected framework for assessing language proficiency.",
+      icon: BookCheck,
+    },
+    {
+      name: "Language Training",
+      description:
+        "We offer customized language training programs to enhance the language skills of your Limited English Proficiency (LEP) Haitian team members. Our training is designed to address specific language challenges faced by your Limited English Proficiency (LEP) staff, enabling them to communicate more effectively and deliver high-quality language services.",
+      icon: NotebookPen,
     },
   ];
 
@@ -53,9 +72,9 @@ export function ClientSolutions() {
           {solutions.map((feature) => (
             <div key={feature.name} className="relative pl-16">
               <dt className="text-base font-semibold leading-7 text-gray-900">
-                <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-950">
+                <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-white border border-gray-300">
                   <feature.icon
-                    className="h-6 w-6 text-white"
+                    className="h-5 w-5 text-gray-900"
                     aria-hidden="true"
                     strokeWidth="1.5"
                   />
