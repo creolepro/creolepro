@@ -4,6 +4,7 @@ import { Hero } from "@/components/Hero";
 import { ClientSolutions } from "@/components/ClientSolutions";
 import ContactForm from "@/components/ContactForm";
 import Process from "@/components/Process";
+import Choose from "@/components/Choose";
 import Head from "next/head";
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
         <Hero />
         <ClientSolutions />
         <Process />
+        <Choose />
         <ContactForm />
       </main>
       <Footer />

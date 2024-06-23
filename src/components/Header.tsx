@@ -151,6 +151,7 @@ export function Header() {
               >
                 How it works
               </NavLink>
+              <NavLink href="#choose">Why Choose Us?</NavLink>
               <NavLink href="/careers">Careers</NavLink>
             </div>
           </div>
