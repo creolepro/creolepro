@@ -71,12 +71,14 @@ export function Footer() {
               </dd>
             </div>
           </dl>
-        </div>
-        <div className="flex flex-col items-center border-t border-slate-400/10 py-10 sm:flex-row-reverse sm:justify-between">
-          <p className="mt-6 text-sm text-slate-500 sm:mt-0">
-            Copyright &copy; {new Date().getFullYear()} CreolePro. All rights
-            reserved.
-          </p>
+          <div className="w-full border-t border-slate-400/10 py-10 flex justify-center">
+            <div className="text-center">
+              <p className="mt-6 text-sm text-slate-500">
+                Copyright &copy; {new Date().getFullYear()} CreolePro, LLC. All
+                rights reserved.
+              </p>
+            </div>
+          </div>
         </div>
       </Container>
     </footer>
