@@ -1,6 +1,4 @@
 import type { Config } from "tailwindcss";
-import { getCalApi } from "@calcom/embed-react";
-import { useEffect } from "react";
 
 const config: Config = {
   content: [

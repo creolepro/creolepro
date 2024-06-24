@@ -88,9 +88,14 @@ function MobileNavigation() {
           >
             <MobileNavLink href="#features">Client Solutions</MobileNavLink>
             <MobileNavLink href="#testimonials">Process</MobileNavLink>
+            <MobileNavLink href="#choose">Why Choose Us?</MobileNavLink>
             <MobileNavLink href="/careers">Careers</MobileNavLink>
+            <MobileNavLink href="tel:+18007771123">
+              +1(800) 777-1123
+            </MobileNavLink>
             <hr className="m-2 border-slate-300/40" />
             <MobileNavLink href="/login">Sign in</MobileNavLink>
+            <MobileNavLink href="/login">Get started</MobileNavLink>
           </Popover.Panel>
         </Transition.Child>
       </Transition.Root>
@@ -164,7 +169,7 @@ export function Header() {
               <NavLink href="/careers">Careers</NavLink>
             </div>
           </div>
-          <div className="flex items-center gap-x-5 md:gap-x-4">
+          <div className="hidden md:flex items-center gap-x-5 md:gap-x-4">
             <Phone
               className="h-5 w-5 text-gray-900"
               aria-hidden="true"
@@ -190,9 +195,9 @@ export function Header() {
                 Get started <span className="hidden lg:inline">today</span>
               </span>
             </Button>
-            <div className="-mr-1 md:hidden">
-              <MobileNavigation />
-            </div>
+          </div>
+          <div className="-mr-1 md:hidden">
+            <MobileNavigation />
           </div>
         </nav>
       </Container>
