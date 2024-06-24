@@ -64,7 +64,7 @@ export function Footer() {
               <dd>
                 <a
                   className="hover:text-gray-900"
-                  href="mailto:hello@example.com"
+                  href="mailto:contact@creolepro.com"
                 >
                   contact@creolepro.com
                 </a>

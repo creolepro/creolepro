@@ -48,7 +48,7 @@ export default function Choose() {
                 Why Choose Us?
               </h2>
               <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                Native and Expert Haitian Creole Translations at Your Service
+                Native and Expert Haitian Creole Translators at Your Service
               </p>
               <p className="mt-6 text-base leading-7 text-gray-600">
                 Our team of Haitian expert matter translators can help you
