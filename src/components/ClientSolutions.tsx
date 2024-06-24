@@ -61,10 +61,11 @@ export function ClientSolutions() {
           Client Solutions
         </h2>
         <p className="mt-6 text-lg leading-8 text-gray-600">
-          Our client-centric approach involves understanding your distinct
-          requirements, objectives, and brand identity to provide tailored
-          solutions aligned with your vision. Our commitment to meticulous care
-          and confidentiality ensures your projects are in trusted hands.
+          At Creolepro, our client-centric approach involves understanding your
+          distinct requirements, objectives, and brand identity to provide
+          tailored solutions aligned with your vision. Our commitment to
+          meticulous care and confidentiality ensures your projects are in
+          trusted hands.
         </p>
       </div>
       <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">

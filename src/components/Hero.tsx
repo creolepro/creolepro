@@ -66,9 +66,8 @@ export function Hero() {
         />
       </h1>
       <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
-        Our team of native and expert matter translators are fluent in Haitian
-        Creole and English and can help you communicate your message accurately
-        and effectively.
+        Our team of Haitian expert matter translators can help you communicate
+        your message accurately and effectively in Haitian Creole.
       </p>
       <div className="mt-10 flex justify-center gap-x-6">
         <Button
