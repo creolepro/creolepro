@@ -5,7 +5,7 @@ import CareerContactForm from "@/components/CareerContactForm";
 export default function Home() {
   return (
     <>
-      <Header />
+      <Header isMainPage={false} />
       <main>
         <CareerContactForm />
       </main>

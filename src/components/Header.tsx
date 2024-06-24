@@ -110,7 +110,7 @@ const scrollToSection = (id: string) => {
   }
 };
 
-export function Header() {
+export function Header({ isMainPage = true }: { isMainPage?: boolean }) {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -139,33 +139,58 @@ export function Header() {
               <Logo className="h-10 w-auto" />
             </Link>
             <div className="hidden md:flex md:gap-x-6">
-              <NavLink
-                href="#features"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("client-solutions");
-                }}
-              >
-                Client Solutions
-              </NavLink>
-              <NavLink
-                href="#process"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("process");
-                }}
-              >
-                How it works
-              </NavLink>
-              <NavLink
-                href="#choose"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("choose");
-                }}
-              >
-                Why Choose Us?
-              </NavLink>
+              {isMainPage ? (
+                <>
+                  <NavLink
+                    href="#features"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection("client-solutions");
+                    }}
+                  >
+                    Client Solutions
+                  </NavLink>
+                  <NavLink
+                    href="#process"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection("process");
+                    }}
+                  >
+                    How it works
+                  </NavLink>
+                  <NavLink
+                    href="#choose"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection("choose");
+                    }}
+                  >
+                    Why Choose Us?
+                  </NavLink>
+                </>
+              ) : (
+                <>
+                  <Link
+                    href="/#features"
+                    className="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900"
+                  >
+                    Client Solutions
+                  </Link>
+                  <Link
+                    href="/#process"
+                    className="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900"
+                  >
+                    How it works
+                  </Link>
+                  <Link
+                    href="/#choose"
+                    className="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900"
+                  >
+                    Why Choose Us?
+                  </Link>
+                </>
+              )}
               <NavLink href="/careers">Careers</NavLink>
             </div>
           </div>
