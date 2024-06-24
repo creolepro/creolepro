@@ -1,12 +1,34 @@
 "use client";
 
+import { Fragment, useEffect, useState } from "react";
 import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
 import Typewriter from "typewriter-effect";
 import { getCalApi } from "@calcom/embed-react";
-import { useEffect } from "react";
+
+const scrollToSection = (id: string) => {
+  const section = document.getElementById(id);
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+};
 
 export function Hero() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset;
+      setIsScrolled(scrollTop > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   useEffect(() => {
     (async function () {
       const cal = await getCalApi({});
@@ -49,7 +71,14 @@ export function Hero() {
         and effectively.
       </p>
       <div className="mt-10 flex justify-center gap-x-6">
-        <Button href="/register" color="blue">
+        <Button
+          href="/register"
+          color="blue"
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSection("contact-form");
+          }}
+        >
           Get a free quote
         </Button>
         <Button variant="outline">

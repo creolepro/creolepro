@@ -47,26 +47,26 @@ export default function Process() {
             project delivery
           </p>
         </div>
-        <ul className="mx-auto mt-12 grid max-w-md grid-cols-1 gap-10 sm:mt-16 lg:mt-20 mr-4 lg:max-w-5xl lg:grid-cols-4">
+        <ul className="mx-auto mt-12 grid max-w-md gap-10 sm:mt-16 lg:mt-20 lg:max-w-5xl lg:grid-cols-4">
           {steps.map((step, index) => (
             <li
               key={step.name}
-              className="flex-start group relative flex lg:flex-col"
+              className="group relative flex flex-col pl-14 sm:pl-0 sm:flex-row lg:flex-col"
             >
               {index < steps.length - 1 && (
                 <span
-                  className="absolute left-[18px] top-14 h-[calc(100%_-_32px)] w-px bg-gray-300 lg:right-0 lg:left-auto lg:top-[18px] lg:h-px lg:w-[calc(100%_-_72px)]"
+                  className="absolute left-5 top-14 h-[calc(100%_-_32px)] w-px bg-gray-300 sm:left-[18px] lg:left-auto lg:right-0 lg:top-[18px] lg:h-px lg:w-[calc(100%_-_72px)]"
                   aria-hidden="true"
                 ></span>
               )}
-              <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-gray-50 border border-gray-300">
+              <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-gray-50 border border-gray-300 sm:relative sm:mb-4 lg:mb-0">
                 <step.icon
                   className="h-5 w-5 text-gray-900"
                   aria-hidden="true"
                   strokeWidth="1.5"
                 />
               </div>
-              <div className="ml-6 lg:ml-0 lg:mt-12">
+              <div className="sm:ml-6 lg:ml-0 lg:mt-12">
                 <h3 className="text-xl font-bold text-gray-900 before:mb-2 before:block before:font-mono before:text-sm before:text-gray-500">
                   {step.name}
                 </h3>
