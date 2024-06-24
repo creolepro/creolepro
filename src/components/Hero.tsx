@@ -3,8 +3,22 @@
 import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
 import Typewriter from "typewriter-effect";
+import { getCalApi } from "@calcom/embed-react";
+import { useEffect } from "react";
 
 export function Hero() {
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({});
+      cal("ui", {
+        theme: "light",
+        styles: { branding: { brandColor: "#1C66F9" } },
+        hideEventTypeDetails: false,
+        layout: "month_view",
+      });
+    })();
+  }, []);
+
   return (
     <Container className="pb-20 pt-48 my-20 text-center">
       <h1 className="mx-auto max-w-4xl font-display text-4xl font-bold tracking-tight text-slate-900 sm:text-6xl min-h-[180px]">
@@ -38,11 +52,14 @@ export function Hero() {
         <Button href="/register" color="blue">
           Get a free quote
         </Button>
-        <Button
-          href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-          variant="outline"
-        >
-          <span className="ml-3">Talk to an expert</span>
+        <Button variant="outline">
+          <button
+            data-cal-namespace=""
+            data-cal-link="creolepro/30min"
+            data-cal-config='{"layout":"month_view"}'
+          >
+            Talk to an expert
+          </button>
         </Button>
       </div>
     </Container>
