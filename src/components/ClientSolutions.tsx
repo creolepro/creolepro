@@ -46,7 +46,7 @@ export function ClientSolutions() {
     {
       name: "Language Training",
       description:
-        "We offer customized language training programs to enhance the language skills of your Limited English Proficiency (LEP) Haitian team members. Our training is designed to address specific language challenges faced by your Limited English Proficiency (LEP) staff, enabling them to communicate more effectively and deliver high-quality language services.",
+        "We offer customized language training programs to enhance the language skills of your Limited English Proficiency (LEP) Haitian Creole speaking team members. Our trainers will gather your requirements and train your staff to address specific language challenges enabling them to understand their duties and communicate more effectively. We deliver the training sessions in person, by phone, and online, removing the need for travel and reducing missed work time.",
       icon: NotebookPen,
     },
   ];
