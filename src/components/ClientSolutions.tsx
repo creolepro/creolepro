@@ -16,19 +16,19 @@ export function ClientSolutions() {
     {
       name: "Document Translation",
       description:
-        "Our document translation services are tailored to our clients’ requirements in the healthcare, legal and educational sector. Count on us for the translation of your discharge summaries, patient education materials, consent forms, parent communication, special education documents, training, legal correspondence to break the language barriers with the Haitian Creole speakers.",
+        "Our document translation services are tailored to our clients’ requirements in the healthcare, legal and educational sectors. Count on us for the translation of your discharge summaries, patient education materials, consent forms, parent communications, special education documents, along with training materials and legal correspondence.",
       icon: FileText,
     },
     {
       name: "Website Translation & Localization",
       description:
-        "Our language services will enable you to usher your organization’s reach within the Haitian Communities. Our project managers will ensure your website content is accurately translated and culturally adapted. With Creolepro localization services your website, software, application, multimedia content engaging and resonating translation tailored to your requirements and the Haitian Creole audience.",
+        "Our language services will enable you to usher your organization’s reach within the Haitian Communities. Our project managers will ensure your website content is accurately translated and culturally adapted. With Creolepro localization services, all of your multimedia content will be turned into engaging Creole communications.",
       icon: PanelsTopLeft,
     },
     {
       name: "Marketing Translation",
       description:
-        "Our marketing translation services ensure that your marketing materials, including brochures, ads, and flyers, are translated accurately and effectively, helping you reach a broader audience..",
+        "Our marketing translation services ensure that your marketing materials, including brochures, ads, and flyers, are translated accurately and effectively, helping you reach a broader audience.",
       icon: StickyNote,
     },
     {

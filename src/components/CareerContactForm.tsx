@@ -17,7 +17,7 @@ export default function CareerContactForm() {
           {`We're Hiring!`}
         </h2>
         <p className="my-6 text-lg leading-8 text-gray-600">
-          {`Join our team! We’re actively seeking native Haitian Creole translators to shape language excellent with us.`}
+          {`Join our team! We’re actively seeking native Haitian Creole translators to help us grow.`}
         </p>
       </div>
       <form
