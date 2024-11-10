@@ -15,6 +15,7 @@ const scrollToSection = (id: string) => {
 
 export function Hero() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,6 +31,8 @@ export function Hero() {
   }, []);
 
   useEffect(() => {
+    setIsClient(true);
+
     (async function () {
       const cal = await getCalApi({});
       cal("ui", {
@@ -71,7 +74,7 @@ export function Hero() {
       </p>
       <div className="mt-10 flex justify-center gap-x-6">
         <Button
-          href="/register"
+          href="#register"
           color="blue"
           onClick={(e) => {
             e.preventDefault();
@@ -80,15 +83,16 @@ export function Hero() {
         >
           Get a free quote
         </Button>
-        <Button variant="outline">
+        <div className="inline-flex rounded-full px-4 py-1.5 text-sm font-semibold transition bg-slate-100 text-slate-900 hover:bg-slate-200">
           <button
             data-cal-namespace=""
             data-cal-link="creolepro/30min"
             data-cal-config='{"layout":"month_view"}'
+            className="flex items-center gap-2"
           >
             Talk to an expert
           </button>
-        </Button>
+        </div>
       </div>
     </Container>
   );

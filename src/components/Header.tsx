@@ -132,14 +132,15 @@ export function Header({ isMainPage = true }: { isMainPage?: boolean }) {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 bg-white py-5 z-[9999] ${
-        isScrolled ? "shadow-md" : ""
-      } py-10`}
+      className={clsx(
+        "fixed top-0 left-0 right-0 bg-white py-5 z-[9999]",
+        isScrolled && "shadow-md"
+      )}
     >
       <Container className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav className="relative flex justify-between">
+        <nav className="relative flex items-center justify-between">
           <div className="flex items-center md:gap-x-12">
-            <Link href="/" aria-label="Home">
+            <Link href="/" aria-label="Home" className="mt-4 md:mt-3">
               <Logo className="h-10 w-auto" />
             </Link>
             <div className="hidden md:flex md:gap-x-6">
@@ -225,7 +226,7 @@ export function Header({ isMainPage = true }: { isMainPage?: boolean }) {
               </span>
             </Button>
           </div>
-          <div className="-mr-1 md:hidden">
+          <div className="flex items-center md:hidden">
             <MobileNavigation />
           </div>
         </nav>
