@@ -5,16 +5,17 @@ import { ClientSolutions } from "@/components/ClientSolutions";
 import ContactForm from "@/components/ContactForm";
 import Process from "@/components/Process";
 import Choose from "@/components/Choose";
-import Head from "next/head";
+import { Metadata } from "next/types";
+
+export const metadata: Metadata = {
+  title: "Creolepro | Haitian Creole Language Services – Human Translation",
+  description:
+    "Creolepro is a women-owned premier language service provider, specialized in the Haitian Creole language. Our mission is to bridge communication gaps and empower individuals, organizations and businesses to connect seamlessly across linguistic and cultural barriers.",
+};
 
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>
-          Creolepro | Haitian Creole Language Services – Human Translation
-        </title>
-      </Head>
       <Header />
       <main>
         <Hero />
