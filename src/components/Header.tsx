@@ -86,8 +86,10 @@ function MobileNavigation() {
             as="div"
             className="absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5"
           >
-            <MobileNavLink href="#features">Client Solutions</MobileNavLink>
-            <MobileNavLink href="#testimonials">Process</MobileNavLink>
+            <MobileNavLink href="#client-solutions">
+              Client Solutions
+            </MobileNavLink>
+            <MobileNavLink href="#process">Process</MobileNavLink>
             <MobileNavLink href="#choose">Why Choose Us?</MobileNavLink>
             <MobileNavLink href="/careers">Careers</MobileNavLink>
             <MobileNavLink href="tel:+18007771123">
@@ -142,7 +144,7 @@ export function Header({ isMainPage = true }: { isMainPage?: boolean }) {
               {isMainPage ? (
                 <>
                   <NavLink
-                    href="#features"
+                    href="#client-solutions"
                     onClick={(e) => {
                       e.preventDefault();
                       scrollToSection("client-solutions");
@@ -172,7 +174,7 @@ export function Header({ isMainPage = true }: { isMainPage?: boolean }) {
               ) : (
                 <>
                   <Link
-                    href="/#features"
+                    href="/#client-solutions"
                     className="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900"
                   >
                     Client Solutions
