@@ -10,6 +10,7 @@ import { Container } from "@/components/Container";
 import { Logo } from "@/components/Logo";
 import { NavLink } from "@/components/NavLink";
 import { Phone } from "lucide-react";
+import LanguageDropdown from "@/components/LanguageDropdown";
 
 function MobileNavLink({
   href,
@@ -225,6 +226,7 @@ export function Header({ isMainPage = true }: { isMainPage?: boolean }) {
                 Get started <span className="hidden lg:inline">today</span>
               </span>
             </Button>
+            <LanguageDropdown />
           </div>
           <div className="flex items-center md:hidden">
             <MobileNavigation />
