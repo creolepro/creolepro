@@ -8,6 +8,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { ChevronDown } from "lucide-react";
+import { useLanguage } from "@/hooks/use-language";
 
 interface Language {
   code: string;
@@ -15,7 +16,7 @@ interface Language {
 }
 
 export default function LanguageDropdown() {
-  const [language, setLanguage] = React.useState<"en" | "ht">("en");
+  const { language, setLanguage } = useLanguage();
 
   const languages: Record<"en" | "ht", Language> = {
     en: {

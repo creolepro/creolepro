@@ -1,8 +1,13 @@
 "use client";
 
 import React, { FormEvent, useState } from "react";
+import { useLanguage } from "@/hooks/use-language";
+import { contactFormTranslations } from "@/translations";
 
 export default function ContactForm() {
+  const { language } = useLanguage();
+  const t = contactFormTranslations[language];
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -42,99 +47,79 @@ export default function ContactForm() {
     <div id="contact-form" className="w-full bg-gray-50 pb-4">
       <div className="mx-auto max-w-7xl pt-20 sm:pt-32 lg:pt-24 bg-gray-50 text-center">
         <h2 className="mt-6 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
-          {`Get your free quote`}
+          {t.title}
         </h2>
-        <p className="my-6 text-lg leading-8 text-gray-600">
-          {`Expand your reach! We will work with you closely to bridge the language barriers gaps.`}
-        </p>
+        <p className="my-6 text-lg leading-8 text-gray-600">{t.description}</p>
       </div>
-      <form
-        action="#"
-        method="POST"
-        className="sm:mx-auto mx-4 my-16 max-w-xl sm:mt-12"
-        onSubmit={handleSubmit}
-      >
+      <form onSubmit={handleSubmit} className="mx-auto max-w-xl sm:mt-12">
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div>
             <label
               htmlFor="firstName"
               className="block text-sm font-semibold leading-6 text-gray-900"
             >
-              First name
+              {t.fields.firstName}
             </label>
-            <div className="mt-2.5">
-              <input
-                type="text"
-                name="firstName"
-                id="firstName"
-                autoComplete="given-name"
-                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-900 sm:text-sm sm:leading-6"
-                onChange={handleInput}
-              />
-            </div>
+            <input
+              type="text"
+              name="firstName"
+              id="firstName"
+              onChange={handleInput}
+              className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-900 sm:text-sm sm:leading-6"
+            />
           </div>
           <div>
             <label
               htmlFor="lastName"
               className="block text-sm font-semibold leading-6 text-gray-900"
             >
-              Last name
+              {t.fields.lastName}
             </label>
-            <div className="mt-2.5">
-              <input
-                type="text"
-                name="lastName"
-                id="lastName"
-                autoComplete="family-name"
-                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-900 sm:text-sm sm:leading-6"
-                onChange={handleInput}
-              />
-            </div>
+            <input
+              type="text"
+              name="lastName"
+              id="lastName"
+              onChange={handleInput}
+              className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-900 sm:text-sm sm:leading-6"
+            />
           </div>
           <div className="sm:col-span-2">
             <label
               htmlFor="email"
               className="block text-sm font-semibold leading-6 text-gray-900"
             >
-              Email
+              {t.fields.email}
             </label>
-            <div className="mt-2.5">
-              <input
-                type="email"
-                name="email"
-                id="email"
-                autoComplete="email"
-                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-900 sm:text-sm sm:leading-6"
-                onChange={handleInput}
-              />
-            </div>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              onChange={handleInput}
+              className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-900 sm:text-sm sm:leading-6"
+            />
           </div>
-        </div>
-        <div className="sm:col-span-2 mt-4">
-          <label
-            htmlFor="text"
-            className="block text-sm font-semibold leading-6 text-gray-900"
-          >
-            Requirements
-          </label>
-          <div className="mt-2.5">
+          <div className="sm:col-span-2">
+            <label
+              htmlFor="description"
+              className="block text-sm font-semibold leading-6 text-gray-900"
+            >
+              {t.fields.requirements}
+            </label>
             <textarea
-              rows={4}
               name="description"
               id="description"
-              defaultValue={""}
-              autoComplete="text"
-              className="block w-full rounded-md border-0 px-3.5 py-6 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-900 sm:text-sm sm:leading-6"
+              rows={4}
               onChange={handleInput}
+              className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-900 sm:text-sm sm:leading-6"
             />
           </div>
         </div>
-        <div className="mt-6">
+        <div className="mt-10">
           <button
             type="submit"
             className="block w-full rounded-md bg-haiti-blue px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-900"
           >
-            {`Submit`}
+            {t.submit}
           </button>
         </div>
       </form>

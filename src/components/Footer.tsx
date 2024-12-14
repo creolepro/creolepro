@@ -1,8 +1,10 @@
-import Link from "next/link";
+"use client";
 
 import { Container } from "@/components/Container";
 import { Logo } from "@/components/Logo";
 import { NavLink } from "@/components/NavLink";
+import { useLanguage } from "@/hooks/use-language";
+import { footerTranslations } from "@/translations";
 
 import {
   BuildingOffice2Icon,
@@ -11,6 +13,9 @@ import {
 } from "@heroicons/react/24/outline";
 
 export function Footer() {
+  const { language } = useLanguage();
+  const t = footerTranslations[language];
+
   return (
     <footer>
       <Container>
@@ -18,30 +23,30 @@ export function Footer() {
           <Logo className="mx-auto h-10 w-auto" />
           <nav className="mt-10 text-sm" aria-label="quick links">
             <div className="-my-1 gap-x-6">
-              <NavLink href="#features">Client Solutions</NavLink>
-              <NavLink href="#process">Process</NavLink>
-              <NavLink href="#choose">Why Choose Us?</NavLink>
-              <NavLink href="#pricing">Careers</NavLink>
+              <NavLink href="#features">{t.clientSolutions}</NavLink>
+              <NavLink href="#process">{t.process}</NavLink>
+              <NavLink href="#choose">{t.whyChooseUs}</NavLink>
+              <NavLink href="#pricing">{t.careers}</NavLink>
             </div>
           </nav>
           <dl className="space-y-4 text-base text-gray-600">
             <div className="flex gap-x-4">
               <dt className="flex-none">
-                <span className="sr-only">Address</span>
+                <span className="sr-only">{t.address}</span>
                 <BuildingOffice2Icon
                   className="h-7 w-6 text-gray-400"
                   aria-hidden="true"
                 />
               </dt>
               <dd>
-                115 E. Main St.
+                {t.addressLine1}
                 <br />
-                Buford, GA 30518
+                {t.addressLine2}
               </dd>
             </div>
             <div className="flex gap-x-4">
               <dt className="flex-none">
-                <span className="sr-only">Telephone</span>
+                <span className="sr-only">{t.telephone}</span>
                 <PhoneIcon
                   className="h-7 w-6 text-gray-400"
                   aria-hidden="true"
@@ -49,13 +54,13 @@ export function Footer() {
               </dt>
               <dd>
                 <a className="hover:text-gray-900" href="tel:+18007771123">
-                  +1(800) 777-1123
+                  {t.phone}
                 </a>
               </dd>
             </div>
             <div className="flex gap-x-4">
               <dt className="flex-none">
-                <span className="sr-only">Email</span>
+                <span className="sr-only">{t.email}</span>
                 <EnvelopeIcon
                   className="h-7 w-6 text-gray-400"
                   aria-hidden="true"
@@ -66,7 +71,7 @@ export function Footer() {
                   className="hover:text-gray-900"
                   href="mailto:contact@creolepro.com"
                 >
-                  contact@creolepro.com
+                  {t.emailAddress}
                 </a>
               </dd>
             </div>
@@ -74,8 +79,10 @@ export function Footer() {
           <div className="w-full border-t border-slate-400/10 py-10 flex justify-center">
             <div className="text-center">
               <p className="mt-6 text-sm text-slate-500">
-                Copyright &copy; {new Date().getFullYear()} CreolePro, LLC. All
-                rights reserved.
+                {t.copyright.replace(
+                  "{year}",
+                  new Date().getFullYear().toString()
+                )}
               </p>
             </div>
           </div>
