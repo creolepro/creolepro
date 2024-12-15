@@ -3,10 +3,12 @@
 import React, { FormEvent, useState } from "react";
 import { useLanguage } from "@/hooks/use-language";
 import { contactFormTranslations } from "@/translations";
+import { toast } from "sonner";
 
 export default function ContactForm() {
   const { language } = useLanguage();
   const t = contactFormTranslations[language];
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -27,20 +29,48 @@ export default function ContactForm() {
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setIsSubmitting(true);
 
-    const form = event.currentTarget;
-    const formData = new FormData(form);
-    const formDataObject = Object.fromEntries(formData.entries());
+    try {
+      const form = event.currentTarget;
+      const formData = new FormData(form);
+      const formDataObject = Object.fromEntries(formData.entries());
 
-    const data = await fetch("api/send-email", {
-      method: "POST",
-      body: JSON.stringify(formDataObject),
-      headers: {
-        accept: "application/json",
-      },
-    }).then((res) => res.json());
+      const response = await fetch("api/send-email", {
+        method: "POST",
+        body: JSON.stringify(formDataObject),
+        headers: {
+          accept: "application/json",
+        },
+      });
 
-    setFormData(data);
+      const data = await response.json();
+
+      if (response.ok) {
+        toast.success(
+          language === "en"
+            ? "Form submitted successfully!"
+            : "Fòm lan soumèt avèk siksè!"
+        );
+        form.reset();
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          description: "",
+        });
+      } else {
+        throw new Error(data.error || "Something went wrong");
+      }
+    } catch (error) {
+      toast.error(
+        language === "en"
+          ? "Failed to submit form. Please try again."
+          : "Echèk nan soumèt fòm lan. Tanpri eseye ankò."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -117,6 +147,7 @@ export default function ContactForm() {
         <div className="mt-10">
           <button
             type="submit"
+            disabled={isSubmitting}
             className="block w-full rounded-md bg-haiti-blue px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-900"
           >
             {t.submit}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/hooks/use-language";
+import { Toaster } from "sonner";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -47,6 +48,7 @@ export default function RootLayout({
       <body className="min-h-screen bg-white font-sans">
         <LanguageProvider>
           <main className="relative">{children}</main>
+          <Toaster position="top-center" richColors />
         </LanguageProvider>
       </body>
     </html>
