@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/hooks/use-language";
 import { Toaster } from "react-hot-toast";
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-poppins",
+});
 
 export const metadata: Metadata = {
   title: "Creolepro | Haitian Creole Language Services – Human Translation",
@@ -25,8 +29,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.className}>
-      <body className="min-h-screen bg-white">
+    <html lang="en" className={poppins.variable}>
+      <body className="min-h-screen bg-white font-sans">
         <LanguageProvider>
           <main className="relative">{children}</main>
           <Toaster position="top-center" />
