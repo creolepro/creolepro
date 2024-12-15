@@ -38,39 +38,27 @@ export function ClientSolutions() {
       </div>
       <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
         <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
-          {t.solutions.map(
-            (solution: {
-              name: string;
-              description: string;
-              icon?: string;
-            }) => {
-              const Icon = solution.icon
-                ? icons[solution.icon as keyof typeof icons]
-                : null;
-              if (!Icon) {
-                console.warn(`Icon not found: ${solution.icon}`);
-                return null;
-              }
-
-              return (
-                <div key={solution.name} className="relative pl-16">
-                  <dt className="text-base font-semibold leading-7 text-gray-900">
-                    <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-white border border-gray-300">
-                      <Icon
-                        className="h-5 w-5 text-gray-900"
-                        aria-hidden="true"
-                        strokeWidth="1.5"
-                      />
-                    </div>
-                    {solution.name}
-                  </dt>
-                  <dd className="mt-2 text-base leading-7 text-gray-600">
-                    {solution.description}
-                  </dd>
-                </div>
-              );
-            }
-          )}
+          {t.solutions.map((solution: { name: string; description: string; icon: string }) => {
+            const Icon = icons[solution.icon as keyof typeof icons];
+            
+            return (
+              <div key={solution.name} className="relative pl-16">
+                <dt className="text-base font-semibold leading-7 text-gray-900">
+                  <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-white border border-gray-300">
+                    <Icon
+                      className="h-5 w-5 text-gray-900"
+                      aria-hidden="true"
+                      strokeWidth="1.5"
+                    />
+                  </div>
+                  {solution.name}
+                </dt>
+                <dd className="mt-2 text-base leading-7 text-gray-600">
+                  {solution.description}
+                </dd>
+              </div>
+            );
+          })}
         </dl>
       </div>
     </div>
