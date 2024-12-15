@@ -1,4 +1,3 @@
-// src/translations/index.ts
 import { headerTranslations } from "./header";
 import { heroTranslations } from "./hero";
 import { clientSolutionsTranslations } from "./clientSolutions";
@@ -7,6 +6,7 @@ import { chooseTranslations } from "./choose";
 import { contactFormTranslations } from "./contactForm";
 import { careerContactFormTranslations } from "./careerContactForm";
 import { footerTranslations } from "./footer";
+import { loginTranslations } from "./login";
 
 export {
   headerTranslations,
@@ -17,4 +17,5 @@ export {
   contactFormTranslations,
   careerContactFormTranslations,
   footerTranslations,
+  loginTranslations,
 };
