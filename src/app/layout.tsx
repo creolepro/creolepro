@@ -19,7 +19,22 @@ export const metadata: Metadata = {
     "professional translation",
     "document translation",
     "website localization",
+    "Haitian translation company",
+    "certified Creole translators",
+    "business translation services",
+    "medical translation Haitian Creole",
+    "legal translation services",
+    "Haiti language services",
   ],
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://creolepro.com/",
+    title: "Creolepro | Professional Haitian Creole Translation Services",
+    description:
+      "Professional Haitian Creole translation services for businesses and organizations. Expert human translators, cultural accuracy, and reliable service.",
+    siteName: "CreolePro",
+  },
 };
 
 export default function RootLayout({
