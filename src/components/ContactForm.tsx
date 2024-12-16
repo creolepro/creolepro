@@ -67,7 +67,7 @@ export default function ContactForm() {
         toast.success(
           language === "en"
             ? "Form submitted successfully!"
-            : "Fòm lan soumèt avèk siksè!"
+            : "Fòm lan soumèt ak siksè!"
         );
         form.reset();
         setFormData({
