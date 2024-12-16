@@ -36,6 +36,11 @@ export const metadata: Metadata = {
     description:
       "Professional Haitian Creole translation services for businesses and organizations. Expert human translators, cultural accuracy, and reliable service.",
     siteName: "CreolePro",
+    images: [
+      {
+        url: "https://utfs.io/f/8JJFzmg6W3Jo1WiEHRuTil6K8yvnpZ40cqaMDHtESLQ2FdeX",
+      },
+    ],
   },
 };
 
