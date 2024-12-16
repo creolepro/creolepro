@@ -43,9 +43,9 @@ export const clientSolutionsTranslations = {
     ],
   },
   ht: {
-    title: "Solisyon Lengwistik nou Ofri a Kilyan nou yo",
+    title: "Sèvis Nou Ofri Kliyan Nou Yo",
     description:
-      "Nan Creolepro, apwòch nou an baze sou bay priyorite a kilyan an pou nou konprann bezwen, objektif espesifik ak imaj bizniz ou an pou nou ofri ou solisyon ki adapte ak vizyon ou. Nou garanti ou angajman nou pou nou founi ou yon travay de kalite kote nou asire ou respè nòm konfidansyalite ak sekirite done pwojè ou yo san wete ni mete.",
+      "Nan Creolepro, nou priyorize solisyon ki adapte ak vizyon w epi ak objektif ou. Nou garanti ou angajman nou pou nou founi ou yon travay de kalite kote nou asire respè nòm konfidansyalite ak sekirite done pwojè ou yo san wete ni mete.",
     solutions: [
       {
         name: "Tradiksyon Dokiman Eta Sivil ak Pèsonèl",
@@ -56,31 +56,31 @@ export const clientSolutionsTranslations = {
       {
         name: "Lokalizasyon Sitwèb",
         description:
-          "Pou moun k ap chèche valorize mak biznis ak imaj pèsonèl yo oswa pran yon ekspansyon sou entènèt la, ekip Creolepro a ap tradui, revize, ak lokalize sitwèb, pou fè mesaj ak enfòmasyon ou yo byen difize epi aksesib pou moun ki pale Kreyòl Ayisyen ak Anglè alawonnbadè.",
+          "Pou moun k ap chèche valorize imaj biznis ak pèsonèl yo oswa pran yon ekspansyon sou entènèt la, ekip Creolepro a ap tradui, revize, ak lokalize sitwèb, pou fè mesaj ak enfòmasyon nou yo byen difize epi aksesib pou moun ki pale Kreyòl Ayisyen ak Anglè alawonnbadè.",
         icon: "PanelsTopLeft",
       },
       {
         name: "Tradiksyon ak Revizyon Kontni Maketing pou Antreprenè",
         description:
-          "Si ou se yon mèt yon biznis, konte sou pou nou tradwi oswa revize materyèl maketing yo tankou bwochi, reklam, anons oswa kontni pou resososyal yo pandan n ap asire mesaj ou a klè e adapte pou piblik Ayisyen an. Epitou, lè ou bezwen adapte materyèl pwomosyon pou yo sonnen byen epi kapte odyans ou bezwen an, kontakte Creolepro!",
+          "Pwopriyetè biznis, konte sou pou nou tradui oswa revize materyèl maketing yo tankou bwochi, reklam, anons oswa kontni pou resososyal yo pandan n ap asire mesaj ou a klè e adapte pou piblik Ayisyen ak Amerikan. Epitou, lè ou bezwen adapte materyèl pwomosyon pou yo sonnen byen epi kapte odyans ou bezwen an, kontakte Creolepro!",
         icon: "StickyNote",
       },
       {
         name: "Tradiksyon Dokiman Teknik",
         description:
-          "Pou itilizatè ak konpayi ki bezwen tradui manyèl teknik oswa materyèl enstriksyon tankou gid itilizatè oswa enfòmasyon sou pwodwi, nou asire presizyon, kalite nan tout pwojè nou antreprann epi fè enfòmasyon an pase nan bònedifòm nan lang Kreyòl Ayisyen an ak Angle a.",
+          "Pou itilizatè ak konpayi ki bezwen tradui manyèl teknik oswa materyèl enstriksyon tankou gid itilizatè oswa enfòmasyon sou pwodui, nou asire presizyon ak kalite nan tout pwojè nou antreprann pou ou epi fè enfòmasyon an pase nan bònedifòm nan lang Kreyòl Ayisyen an ak Angle a.",
         icon: "ScrollText",
       },
       {
-        name: "Seyans Fòmasyon",
+        name: "Fòmasyon",
         description:
-          "Kit w ap prepare ou pou yon evènman enpòtan oswa objektif ou se kreye yon kanpay pou angaje ou oswa kominike ak kominote w la, nou ofri w solisyon nan lang Kreyòl Ayisyen ak nan lang Angle an pou fòmasyon ak aprantisaj.",
+          "Kit w ap pare yon evènman enpòtan oswa objektif ou se kreye yon kanpay pou angaje ou oswa kominike ak kominote w la, nou ofri w solisyon adapte nan lang Kreyòl Ayisyen ak nan lang Angle an pou fòmasyon ak aprantisaj.",
         icon: "BookCheck",
       },
       {
         name: "Entèpretasyon",
         description:
-          "Ou bezwen konprann tout sa k ap di devan w nan lang Angle an? Kit ou bezwen sipò ak sèvis entèpretasyon pou yon reyinyon pèsonèl, randevou kay avoka, nan imigrasyon, oswa konsiltasyon medikal, entèprèt nou yo ka akonpaye ou e asire kominikasyon an pase klèman pa telefòn, souplas, oswa sou videyo. Entèprèt nou yo se natifnatal peyi Dayiti yo ye, kidonk konte sou nou pou n ba yon travay pou w wè klè kou dlo kòk!!!",
+          "Ou bezwen konprann tout sa k ap di nan lang Anglè a devan ou? Kit ou bezwen sipò ak sèvis entèpretasyon pou yon reyinyon biznis ak pèsonèl, randevou kay avoka, nan imigrasyon, oswa konsiltasyon medikal, entèprèt nou yo ka akonpaye ou e asire kominikasyon an pase klèman pa telefòn, souplas, oswa sou videyo.",
         icon: "NotebookPen",
       },
     ],

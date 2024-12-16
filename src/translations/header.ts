@@ -10,13 +10,13 @@ export const headerTranslations = {
     phone: "+1(800) 777-1123",
   },
   ht: {
-    clientSolutions: "Solisyon pou Kliyan",
-    howItWorks: "Kijan li Mache",
-    whyChooseUs: "Poukisa Chwazi Nou?",
+    clientSolutions: "Solisyon Pou Kliyan",
+    howItWorks: "Pwosesis la",
+    whyChooseUs: "Chwazi Nou",
     careers: "Karyè",
     signIn: "Konekte",
     getStarted: "Kòmanse",
-    getStartedToday: "Kòmanse jodi a",
+    getStartedToday: "Kòmanse Jodi a",
     phone: "+1(800) 777-1123",
   },
 };

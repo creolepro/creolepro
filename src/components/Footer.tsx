@@ -25,7 +25,9 @@ export function Footer() {
             <div className="-my-1 gap-x-6">
               <NavLink href="#features">{t.clientSolutions}</NavLink>
               <NavLink href="#process">{t.process}</NavLink>
-              <NavLink href="#choose">{t.whyChooseUs}</NavLink>
+              {language === "en" && (
+                <NavLink href="#choose">{t.whyChooseUs}</NavLink>
+              )}
               <NavLink href="#pricing">{t.careers}</NavLink>
             </div>
           </nav>

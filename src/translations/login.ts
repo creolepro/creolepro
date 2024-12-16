@@ -16,7 +16,7 @@ export const loginTranslations = {
     submit: "Sign in",
   },
   ht: {
-    title: "Konekte nan kont ou",
+    title: "Konekte ak kont ou",
     fields: {
       email: {
         label: "Adrès imèl",

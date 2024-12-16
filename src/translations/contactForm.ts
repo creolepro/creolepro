@@ -7,19 +7,27 @@ export const contactFormTranslations = {
       name: "Full name",
       email: "Email",
       requirements: "Requirements",
+      placeholders: {
+        name: "John Doe",
+        email: "john@domain.com",
+      },
     },
     submit: "Submit",
     submitting: "Submitting",
     submitted: "Submitted!",
   },
   ht: {
-    title: "Fè yon demann devi gratis",
+    title: "Ranpli fòm sa a, gratis",
     description:
-      "Pran ekspansyon ou ou toujou reve an! Nou pral kolabore avèk ou pou kwape difilkilte lenguistik yo!",
+      "Pran ekspansyon ou toujou reve an! Nou pral kolabore avèk ou pou kwape difilkilte lenguistik yo!",
     fields: {
       name: "Non konplè",
       email: "Imèl",
       requirements: "Demann",
+      placeholders: {
+        name: "Non",
+        email: "non@domèn.com",
+      },
     },
     submit: "Soumèt",
     submitting: "Soumet",

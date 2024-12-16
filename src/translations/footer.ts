@@ -14,9 +14,9 @@ export const footerTranslations = {
     copyright: "Copyright © {year} CreolePro, LLC. All rights reserved.",
   },
   ht: {
-    clientSolutions: "Solisyon pou Kliyan",
-    process: "Pwosesis",
-    whyChooseUs: "Poukisa Chwazi Nou?",
+    clientSolutions: "Solisyon Pou Kliyan",
+    process: "Pwosesis la",
+    whyChooseUs: "Chwazi Nou",
     careers: "Karyè",
     address: "Adrès",
     addressLine1: "115 E. Main St.",

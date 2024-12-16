@@ -20,7 +20,7 @@ export const careerContactFormTranslations = {
   ht: {
     title: "N ap Rekrite!",
     description:
-      "Vin jwenn ekip nou an! N ap aktivman chèche tradiktè Kreyòl Ayisyen natif-natal pou ede nou grandi.",
+      "N ap chèche tradiktè Kreyòl Ayisyen kalifye pou ede nou grandi. Ou se yon pwofesyonèl konsekan ki maton nan zafè tradiksyon? Ranpli fòm sa a.",
     fields: {
       firstName: "Non",
       lastName: "Siyati",
@@ -29,7 +29,7 @@ export const careerContactFormTranslations = {
       resume: {
         label: "CV",
         upload: "Telechaje yon fichye",
-        dragDrop: "oswa trennen epi lage",
+        dragDrop: "oswa kopye epi lage l la a",
         formats: "PDF, DOC, DOCX, TXT, RTF",
       },
     },

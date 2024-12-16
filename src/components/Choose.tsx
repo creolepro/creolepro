@@ -8,6 +8,8 @@ export default function Choose() {
   const { language } = useLanguage();
   const t = chooseTranslations[language];
 
+  if (language !== "en") return null;
+
   return (
     <section id="choose">
       <div className="bg-white py-24 sm:py-32">

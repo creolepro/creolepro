@@ -28,12 +28,12 @@ export const processTranslations = {
   },
   ht: {
     subtitle: "Pwosesis La",
-    title: "Kòmande tradiksyon w lan nan 4 etap byen fasil",
+    title: "Fè demann tradiksyon w lan nan 4 etap byen fasil",
     description:
       "N ap envite ou dekouvri optimizasyon pwosesis nou an ki pèmèt nou livre w yon pwojè san fòskote",
     steps: [
       {
-        name: "Komande",
+        name: "Fè demann ou an",
         description: "Soumèt yon demann devi ak espesifkasyon pwojè ou la",
       },
       {
@@ -44,12 +44,12 @@ export const processTranslations = {
       {
         name: "Tradiksyon",
         description:
-          "Priyorite nou lè n ap travay sou projè yo se aplike rigè ak presizyon epi suiv yon metòd kontwòl kalite pou asire pwojè w la korèk e ba ou satifaksyon.",
+          "Nou aplike yon pwosesis ki tabli sou rigè ak presizyon pou tradui tèks la pandan n ap prezève sans, nyans kilitirèl ak yon metòd kontwòl kalite pou asire pwojè w la korèk e ba ou satifaksyon.",
       },
       {
         name: "Livrezon",
         description:
-          "Se tout! Nou livre ou pwojè tradisyon w la atravè platfòm sekirize nou an.",
+          "Se tout! Nou livre ou pwojè tradisyon w lan atravè platfòm sekirize nou an.",
       },
     ],
   },

@@ -24,9 +24,9 @@ export const heroTranslations = {
   },
   ht: {
     title: {
-      prefix: "Tradiksyon",
-      highlight: "Pwofesyonèl",
-      suffix: "an Kreyòl Ayisyen Pou",
+      prefix: "Tradiksyon Pwofesyonèl",
+      highlight: "Kreyòl Ayisyen",
+      suffix: "Pou",
     },
     typewriter: [
       "Biznis ou",
@@ -39,7 +39,7 @@ export const heroTranslations = {
       "Dokiman Pèsonèl",
     ],
     description:
-      "Ekip tradiktè ekspè Ayisyen nou yo ka ede w kominike mesaj ou a avèk presizyon epi efikasman nan lang Kreyòl Ayisyen.",
+      "Ekip tradiktè natifnatal nou yo ka ede w kominike mesaj ou a ak presizyon epi korèkteman nan lang Kreyòl Ayisyen an ak Angle a.",
     cta: {
       quote: "Fè yon demann devi gratis",
       expert: "Pale ak yon ekspè",

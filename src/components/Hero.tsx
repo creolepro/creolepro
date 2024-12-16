@@ -47,18 +47,37 @@ export function Hero() {
   return (
     <Container className="pb-20 pt-48 my-20 text-center">
       <h1 className="mx-auto max-w-4xl font-display text-4xl font-bold tracking-tight text-slate-900 sm:text-6xl min-h-[180px]">
-        {t.title.prefix}{" "}
-        <span className="relative whitespace-nowrap">
-          <span className="relative text-haiti-blue">{t.title.highlight}</span>
-        </span>{" "}
-        {t.title.suffix}{" "}
-        <Typewriter
-          options={{
-            strings: t.typewriter,
-            autoStart: true,
-            loop: true,
-          }}
-        />
+        <div className={language === "ht" ? "mb-2" : ""}>
+          {language === "en" ? (
+            <span>
+              {t.title.prefix}{" "}
+              <span className="relative whitespace-nowrap">
+                <span className="relative text-haiti-blue">
+                  {t.title.highlight}
+                </span>
+              </span>
+            </span>
+          ) : (
+            t.title.prefix
+          )}
+        </div>{" "}
+        {language === "ht" && (
+          <span className="relative whitespace-nowrap">
+            <span className="relative text-haiti-blue">
+              {t.title.highlight}
+            </span>
+          </span>
+        )}{" "}
+        {t.title.suffix}
+        <div className={language === "ht" ? "mt-2" : ""}>
+          <Typewriter
+            options={{
+              strings: t.typewriter,
+              autoStart: true,
+              loop: true,
+            }}
+          />
+        </div>
       </h1>
       <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
         {t.description}

@@ -94,11 +94,16 @@ function MobileNavigation() {
             as="div"
             className="absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5"
           >
-            <MobileNavLink href="#client-solutions">
-              {t.clientSolutions}
-            </MobileNavLink>
+            <div className="flex justify-between items-center">
+              <MobileNavLink href="#client-solutions">
+                {t.clientSolutions}
+              </MobileNavLink>
+              <LanguageDropdown />
+            </div>
             <MobileNavLink href="#process">{t.howItWorks}</MobileNavLink>
-            <MobileNavLink href="#choose">{t.whyChooseUs}</MobileNavLink>
+            {language === "en" && (
+              <MobileNavLink href="#choose">{t.whyChooseUs}</MobileNavLink>
+            )}
             <MobileNavLink href="/careers">{t.careers}</MobileNavLink>
             <MobileNavLink href="tel:+18007771123">{t.phone}</MobileNavLink>
             <hr className="m-2 border-slate-300/40" />
@@ -169,15 +174,17 @@ export function Header({ isMainPage = true }: { isMainPage?: boolean }) {
                   >
                     {t.howItWorks}
                   </NavLink>
-                  <NavLink
-                    href="#choose"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToSection("choose");
-                    }}
-                  >
-                    {t.whyChooseUs}
-                  </NavLink>
+                  {language === "en" && (
+                    <NavLink
+                      href="#choose"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        scrollToSection("choose");
+                      }}
+                    >
+                      {t.whyChooseUs}
+                    </NavLink>
+                  )}
                 </>
               ) : (
                 <>
@@ -193,12 +200,14 @@ export function Header({ isMainPage = true }: { isMainPage?: boolean }) {
                   >
                     {t.howItWorks}
                   </Link>
-                  <Link
-                    href="/#choose"
-                    className="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900"
-                  >
-                    {t.whyChooseUs}
-                  </Link>
+                  {language === "en" && (
+                    <Link
+                      href="/#choose"
+                      className="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900"
+                    >
+                      {t.whyChooseUs}
+                    </Link>
+                  )}
                 </>
               )}
               <NavLink href="/careers">{t.careers}</NavLink>
