@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/hooks/use-language";
 import { Toaster } from "sonner";
+import { Analytics } from "@vercel/analytics/react";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -49,6 +50,7 @@ export default function RootLayout({
         <LanguageProvider>
           <main className="relative">{children}</main>
           <Toaster position="top-center" richColors />
+          <Analytics />
         </LanguageProvider>
       </body>
     </html>
