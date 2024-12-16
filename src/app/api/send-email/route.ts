@@ -12,9 +12,14 @@ export async function POST(request: Request) {
   console.log(formData);
 
   try {
+    const toEmails =
+      process.env.NODE_ENV === "development"
+        ? ["delivered@resend.dev"]
+        : ["patricedouge@gmail.com", "quote@creolepro.com"];
+
     const { data, error } = await resend.emails.send({
       from: "quote@creolepro.com",
-      to: ["patricedouge@gmail.com", "quote@creolepro.com"],
+      to: toEmails,
       subject: "New Quote Request",
       react: EmailTemplate({
         firstName: formData.firstName,

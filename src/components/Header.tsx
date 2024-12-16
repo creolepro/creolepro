@@ -4,12 +4,15 @@ import { Fragment, useEffect, useState } from "react";
 import Link from "next/link";
 import { Popover, Transition } from "@headlessui/react";
 import clsx from "clsx";
+import { useLanguage } from "@/hooks/use-language";
+import { headerTranslations } from "@/translations";
 
 import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
 import { Logo } from "@/components/Logo";
 import { NavLink } from "@/components/NavLink";
 import { Phone } from "lucide-react";
+import LanguageDropdown from "@/components/LanguageDropdown";
 
 function MobileNavLink({
   href,
@@ -55,6 +58,9 @@ function MobileNavIcon({ open }: { open: boolean }) {
 }
 
 function MobileNavigation() {
+  const { language } = useLanguage();
+  const t = headerTranslations[language];
+
   return (
     <Popover>
       <Popover.Button
@@ -88,18 +94,21 @@ function MobileNavigation() {
             as="div"
             className="absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5"
           >
-            <MobileNavLink href="#client-solutions">
-              Client Solutions
-            </MobileNavLink>
-            <MobileNavLink href="#process">Process</MobileNavLink>
-            <MobileNavLink href="#choose">Why Choose Us?</MobileNavLink>
-            <MobileNavLink href="/careers">Careers</MobileNavLink>
-            <MobileNavLink href="tel:+18007771123">
-              +1(800) 777-1123
-            </MobileNavLink>
+            <div className="flex justify-between items-center">
+              <MobileNavLink href="#client-solutions">
+                {t.clientSolutions}
+              </MobileNavLink>
+              <LanguageDropdown />
+            </div>
+            <MobileNavLink href="#process">{t.howItWorks}</MobileNavLink>
+            {language === "en" && (
+              <MobileNavLink href="#choose">{t.whyChooseUs}</MobileNavLink>
+            )}
+            <MobileNavLink href="/careers">{t.careers}</MobileNavLink>
+            <MobileNavLink href="tel:+18007771123">{t.phone}</MobileNavLink>
             <hr className="m-2 border-slate-300/40" />
-            <MobileNavLink href="/login">Sign in</MobileNavLink>
-            <MobileNavLink href="/login">Get started</MobileNavLink>
+            <MobileNavLink href="/login">{t.signIn}</MobileNavLink>
+            <MobileNavLink href="/login">{t.getStarted}</MobileNavLink>
           </Popover.Panel>
         </Transition.Child>
       </Transition.Root>
@@ -116,6 +125,8 @@ const scrollToSection = (id: string) => {
 
 export function Header({ isMainPage = true }: { isMainPage?: boolean }) {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { language } = useLanguage();
+  const t = headerTranslations[language];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -124,7 +135,6 @@ export function Header({ isMainPage = true }: { isMainPage?: boolean }) {
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -153,7 +163,7 @@ export function Header({ isMainPage = true }: { isMainPage?: boolean }) {
                       scrollToSection("client-solutions");
                     }}
                   >
-                    Client Solutions
+                    {t.clientSolutions}
                   </NavLink>
                   <NavLink
                     href="#process"
@@ -162,17 +172,19 @@ export function Header({ isMainPage = true }: { isMainPage?: boolean }) {
                       scrollToSection("process");
                     }}
                   >
-                    How it works
+                    {t.howItWorks}
                   </NavLink>
-                  <NavLink
-                    href="#choose"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToSection("choose");
-                    }}
-                  >
-                    Why Choose Us?
-                  </NavLink>
+                  {language === "en" && (
+                    <NavLink
+                      href="#choose"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        scrollToSection("choose");
+                      }}
+                    >
+                      {t.whyChooseUs}
+                    </NavLink>
+                  )}
                 </>
               ) : (
                 <>
@@ -180,23 +192,25 @@ export function Header({ isMainPage = true }: { isMainPage?: boolean }) {
                     href="/#client-solutions"
                     className="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900"
                   >
-                    Client Solutions
+                    {t.clientSolutions}
                   </Link>
                   <Link
                     href="/#process"
                     className="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900"
                   >
-                    How it works
+                    {t.howItWorks}
                   </Link>
-                  <Link
-                    href="/#choose"
-                    className="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900"
-                  >
-                    Why Choose Us?
-                  </Link>
+                  {language === "en" && (
+                    <Link
+                      href="/#choose"
+                      className="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900"
+                    >
+                      {t.whyChooseUs}
+                    </Link>
+                  )}
                 </>
               )}
-              <NavLink href="/careers">Careers</NavLink>
+              <NavLink href="/careers">{t.careers}</NavLink>
             </div>
           </div>
           <div className="hidden md:flex items-center gap-x-5 md:gap-x-4">
@@ -206,11 +220,11 @@ export function Header({ isMainPage = true }: { isMainPage?: boolean }) {
               strokeWidth="1.5"
             />
             <Link href="tel:+18007771123" className="text-slate-800 text-md">
-              <p className="text-slate-800 text-md">+1(800) 777-1123</p>
+              <p className="text-slate-800 text-md">{t.phone}</p>
             </Link>
             <Button href="/login" variant="outline">
               <div className="hidden md:block">
-                <span>Sign in</span>
+                <span>{t.signIn}</span>
               </div>
             </Button>
             <Button
@@ -221,10 +235,9 @@ export function Header({ isMainPage = true }: { isMainPage?: boolean }) {
                 scrollToSection("contact-form");
               }}
             >
-              <span>
-                Get started <span className="hidden lg:inline">today</span>
-              </span>
+              <span>{t.getStartedToday}</span>
             </Button>
+            <LanguageDropdown />
           </div>
           <div className="flex items-center md:hidden">
             <MobileNavigation />
