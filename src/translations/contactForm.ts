@@ -17,7 +17,7 @@ export const contactFormTranslations = {
     submitted: "Submitted!",
   },
   ht: {
-    title: "Ranpli fòm sa a, gratis",
+    title: "Soumèt demann ou an, gratis!",
     description:
       "Pran ekspansyon ou toujou reve an! Nou pral kolabore avèk ou pou kwape difilkilte lenguistik yo!",
     fields: {
