@@ -104,7 +104,6 @@ function MobileNavigation() {
             {language === "en" && (
               <MobileNavLink href="#choose">{t.whyChooseUs}</MobileNavLink>
             )}
-            <MobileNavLink href="/careers">{t.careers}</MobileNavLink>
             <MobileNavLink href="tel:+18007771123">{t.phone}</MobileNavLink>
             <hr className="m-2 border-slate-300/40" />
             <MobileNavLink href="/login">{t.signIn}</MobileNavLink>
@@ -210,7 +209,6 @@ export function Header({ isMainPage = true }: { isMainPage?: boolean }) {
                   )}
                 </>
               )}
-              <NavLink href="/careers">{t.careers}</NavLink>
             </div>
           </div>
           <div className="hidden md:flex items-center gap-x-5 md:gap-x-4">
