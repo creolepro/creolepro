@@ -28,7 +28,6 @@ export function Footer() {
               {language === "en" && (
                 <NavLink href="#choose">{t.whyChooseUs}</NavLink>
               )}
-              <NavLink href="#pricing">{t.careers}</NavLink>
             </div>
           </nav>
           <dl className="space-y-4 text-base text-gray-600">

@@ -17,16 +17,18 @@ import LanguageDropdown from "@/components/LanguageDropdown";
 function MobileNavLink({
   href,
   children,
+  onClick,
 }: {
   href: string;
   children: React.ReactNode;
+  onClick?: (e: React.MouseEvent) => void;
 }) {
   return (
-    <div className="block w-full p-2">
-      <Link href={href} className="block w-full">
+    <Popover.Button as="div" className="block w-full p-2">
+      <Link href={href} className="block w-full" onClick={onClick}>
         {children}
       </Link>
-    </div>
+    </Popover.Button>
   );
 }
 
@@ -63,55 +65,92 @@ function MobileNavigation() {
 
   return (
     <Popover>
-      <Popover.Button
-        className="relative z-10 flex h-8 w-8 items-center justify-center ui-not-focus-visible:outline-none"
-        aria-label="Toggle Navigation"
-      >
-        {({ open }) => <MobileNavIcon open={open} />}
-      </Popover.Button>
-      <Transition.Root>
-        <Transition.Child
-          as={Fragment}
-          enter="duration-150 ease-out"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="duration-150 ease-in"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
-        >
-          <Popover.Overlay className="fixed inset-0 bg-slate-300/50" />
-        </Transition.Child>
-        <Transition.Child
-          as={Fragment}
-          enter="duration-150 ease-out"
-          enterFrom="opacity-0 scale-95"
-          enterTo="opacity-100 scale-100"
-          leave="duration-100 ease-in"
-          leaveFrom="opacity-100 scale-100"
-          leaveTo="opacity-0 scale-95"
-        >
-          <Popover.Panel
-            as="div"
-            className="absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5"
+      {({ close }) => (
+        <>
+          <Popover.Button
+            className="relative z-10 flex h-8 w-8 items-center justify-center ui-not-focus-visible:outline-none"
+            aria-label="Toggle Navigation"
           >
-            <div className="flex justify-between items-center">
-              <MobileNavLink href="#client-solutions">
-                {t.clientSolutions}
-              </MobileNavLink>
-              <LanguageDropdown />
-            </div>
-            <MobileNavLink href="#process">{t.howItWorks}</MobileNavLink>
-            {language === "en" && (
-              <MobileNavLink href="#choose">{t.whyChooseUs}</MobileNavLink>
-            )}
-            <MobileNavLink href="/careers">{t.careers}</MobileNavLink>
-            <MobileNavLink href="tel:+18007771123">{t.phone}</MobileNavLink>
-            <hr className="m-2 border-slate-300/40" />
-            <MobileNavLink href="/login">{t.signIn}</MobileNavLink>
-            <MobileNavLink href="/login">{t.getStarted}</MobileNavLink>
-          </Popover.Panel>
-        </Transition.Child>
-      </Transition.Root>
+            {({ open }) => <MobileNavIcon open={open} />}
+          </Popover.Button>
+          <Transition.Root>
+            <Transition.Child
+              as={Fragment}
+              enter="duration-150 ease-out"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="duration-150 ease-in"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <Popover.Overlay className="fixed inset-0 bg-slate-300/50" />
+            </Transition.Child>
+            <Transition.Child
+              as={Fragment}
+              enter="duration-150 ease-out"
+              enterFrom="opacity-0 scale-95"
+              enterTo="opacity-100 scale-100"
+              leave="duration-100 ease-in"
+              leaveFrom="opacity-100 scale-100"
+              leaveTo="opacity-0 scale-95"
+            >
+              <Popover.Panel
+                as="div"
+                className="absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5"
+              >
+                <div className="flex justify-between items-center">
+                  <MobileNavLink
+                    href="#client-solutions"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection("client-solutions");
+                      close();
+                    }}
+                  >
+                    {t.clientSolutions}
+                  </MobileNavLink>
+                  <LanguageDropdown />
+                </div>
+                <MobileNavLink
+                  href="#process"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("process");
+                    close();
+                  }}
+                >
+                  {t.howItWorks}
+                </MobileNavLink>
+                {language === "en" && (
+                  <MobileNavLink
+                    href="#choose"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection("choose");
+                      close();
+                    }}
+                  >
+                    {t.whyChooseUs}
+                  </MobileNavLink>
+                )}
+                <MobileNavLink href="tel:+18007771123">{t.phone}</MobileNavLink>
+                <hr className="m-2 border-slate-300/40" />
+                <MobileNavLink href="/login">{t.signIn}</MobileNavLink>
+                <MobileNavLink
+                  href="#register"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("contact-form");
+                    close();
+                  }}
+                >
+                  {t.getStartedToday}
+                </MobileNavLink>
+              </Popover.Panel>
+            </Transition.Child>
+          </Transition.Root>
+        </>
+      )}
     </Popover>
   );
 }
@@ -210,7 +249,6 @@ export function Header({ isMainPage = true }: { isMainPage?: boolean }) {
                   )}
                 </>
               )}
-              <NavLink href="/careers">{t.careers}</NavLink>
             </div>
           </div>
           <div className="hidden md:flex items-center gap-x-5 md:gap-x-4">
