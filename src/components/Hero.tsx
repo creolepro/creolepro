@@ -45,7 +45,7 @@ export function Hero() {
   }, []);
 
   return (
-    <Container className="pb-20 pt-48 my-20 text-center">
+    <Container className="pb-20 pt-20 md:pt-48 my-20 text-center">
       <h1 className="mx-auto max-w-4xl font-display text-4xl font-bold tracking-tight text-slate-900 sm:text-6xl min-h-[180px]">
         <div className={language === "ht" ? "mb-2" : ""}>
           {language === "en" ? (
