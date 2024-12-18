@@ -6,40 +6,85 @@ import { contactFormTranslations } from "@/translations";
 import { toast } from "sonner";
 import { Loader2, CheckCircle } from "lucide-react";
 
+interface FormErrors {
+  name?: string;
+  email?: string;
+  description?: string;
+}
+
+interface FormData {
+  name: string;
+  email: string;
+  description: string;
+}
+
 export default function ContactForm() {
   const { language } = useLanguage();
   const t = contactFormTranslations[language];
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [errors, setErrors] = useState<FormErrors>({});
 
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     description: "",
   });
 
-  const handleInput = (e: { target: { name: any; value: any } }) => {
-    const fieldName = e.target.name;
-    const fieldValue = e.target.value;
-
-    setFormData((prevState) => ({
-      ...prevState,
-      [fieldName]: fieldValue,
+  const handleInput = (e: { target: { name: string; value: string } }) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
     }));
+    // Clear error when user starts typing
+    if (errors[name as keyof FormErrors]) {
+      setErrors((prev) => ({
+        ...prev,
+        [name]: undefined,
+      }));
+    }
   };
 
-  const isFormValid = () => {
-    return Object.values(formData).every((value) => value.trim() !== "");
+  const validateForm = (): boolean => {
+    const newErrors: FormErrors = {};
+    let isValid = true;
+
+    if (!formData.name.trim()) {
+      newErrors.name = language === "en" ? "Name is required" : "Non obligatwa";
+      isValid = false;
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email =
+        language === "en" ? "Email is required" : "Imèl obligatwa";
+      isValid = false;
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email =
+        language === "en"
+          ? "Please enter a valid email"
+          : "Tanpri antre yon imèl valid";
+      isValid = false;
+    }
+
+    if (!formData.description.trim()) {
+      newErrors.description =
+        language === "en" ? "Description is required" : "Deskripsyon obligatwa";
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
   };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    if (!isFormValid()) {
+    if (!validateForm()) {
       toast.error(
         language === "en"
-          ? "Please fill out all fields."
-          : "Tanpri ranpli tout chan yo."
+          ? "Please fill out all required fields."
+          : "Tanpri ranpli tout seksyon ki obligatwa yo."
       );
       return;
     }
@@ -75,6 +120,7 @@ export default function ContactForm() {
           email: "",
           description: "",
         });
+        setErrors({});
         setTimeout(() => {
           setIsSuccess(false);
         }, 2000);
@@ -103,6 +149,7 @@ export default function ContactForm() {
       <form
         onSubmit={handleSubmit}
         className="mx-auto max-w-xl sm:mt-12 px-4 sm:px-0"
+        noValidate
       >
         <div className="grid grid-cols-1 gap-x-8 gap-y-6">
           <div>
@@ -116,11 +163,16 @@ export default function ContactForm() {
               type="text"
               name="name"
               id="name"
-              required
+              value={formData.name}
               placeholder={t.fields.placeholders.name}
               onChange={handleInput}
-              className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-900 sm:text-sm sm:leading-6"
+              className={`block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ${
+                errors.name ? "ring-red-500" : "ring-gray-300"
+              } placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-900 sm:text-sm sm:leading-6`}
             />
+            {errors.name && (
+              <p className="mt-1 text-sm text-red-500">{errors.name}</p>
+            )}
           </div>
           <div>
             <label
@@ -133,11 +185,16 @@ export default function ContactForm() {
               type="email"
               name="email"
               id="email"
-              required
+              value={formData.email}
               placeholder={t.fields.placeholders.email}
               onChange={handleInput}
-              className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-900 sm:text-sm sm:leading-6"
+              className={`block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ${
+                errors.email ? "ring-red-500" : "ring-gray-300"
+              } placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-900 sm:text-sm sm:leading-6`}
             />
+            {errors.email && (
+              <p className="mt-1 text-sm text-red-500">{errors.email}</p>
+            )}
           </div>
           <div>
             <label
@@ -150,21 +207,23 @@ export default function ContactForm() {
               name="description"
               id="description"
               rows={4}
-              required
+              value={formData.description}
               onChange={handleInput}
-              className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-900 sm:text-sm sm:leading-6"
+              className={`block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ${
+                errors.description ? "ring-red-500" : "ring-gray-300"
+              } placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-900 sm:text-sm sm:leading-6`}
             />
+            {errors.description && (
+              <p className="mt-1 text-sm text-red-500">{errors.description}</p>
+            )}
           </div>
         </div>
         <div className="my-10">
           <button
             type="submit"
-            disabled={isSubmitting || !isFormValid()}
             className={`block w-full rounded-md px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-900 transition-all duration-200 ease-in-out ${
               isSuccess
                 ? "bg-green-600 hover:bg-green-700"
-                : !isFormValid()
-                ? "bg-gray-400 cursor-not-allowed"
                 : "bg-haiti-blue hover:bg-blue-900"
             }`}
           >
