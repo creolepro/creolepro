@@ -50,13 +50,13 @@ export const clientSolutionsTranslations = {
       {
         name: "Tradiksyon Dokiman Eta Sivil ak Pèsonèl",
         description:
-          "Ekip tradiktè pwofesyonèl Kreyòl Ayisyen natifnatal nou yo ofri tradiksyon fidèl, kredib dokiman eta sivil tankou batistè, ak maryaj, diplòm, oswa revizyon nenpòt dokiman legal pou imigrasyon, pwosedi legal, oswa zafè pèsonèl, elatriye.",
+          "Ekip tradiktè pwofesyonèl Kreyòl Ayisyen natifnatal nou yo ofri tradiksyon fidèl ak kredib pou dokiman eta sivil tankou batistè, ak maryaj, diplòm, oswa revizyon nenpòt dokiman legal pou imigrasyon, pwosedi legal, oswa zafè pèsonèl.",
         icon: "FileText",
       },
       {
         name: "Lokalizasyon Sitwèb",
         description:
-          "Pou moun k ap chèche valorize imaj biznis ak pèsonèl yo oswa pran yon ekspansyon sou entènèt la, ekip Creolepro a ap tradui, revize, ak lokalize sitwèb, pou fè mesaj ak enfòmasyon nou yo byen difize epi aksesib pou moun ki pale Kreyòl Ayisyen ak Anglè alawonnbadè.",
+          "Pou moun k ap chèche valorize imaj biznis ak imaj pèsonèl yo oswa pran yon ekspansyon sou entènèt la, ekip Creolepro a ka tradui, revize, e lokalize sitwèb, pou fè mesaj ak enfòmasyon nou yo byen difize epi adapte pou moun ki pale Kreyòl Ayisyen ak Anglè alawonnbadè.",
         icon: "PanelsTopLeft",
       },
       {
@@ -68,19 +68,19 @@ export const clientSolutionsTranslations = {
       {
         name: "Tradiksyon Dokiman Teknik",
         description:
-          "Pou itilizatè ak konpayi ki bezwen tradui manyèl teknik oswa materyèl enstriksyon tankou gid itilizatè oswa enfòmasyon sou pwodui, nou asire presizyon ak kalite nan tout pwojè nou antreprann pou ou epi fè enfòmasyon an pase nan bònedifòm nan lang Kreyòl Ayisyen an ak Angle a.",
+          "Pou itilizatè ak konpayi ki bezwen tradui manyèl teknik oswa materyèl enstriksyon tankou gid itilizatè oswa enfòmasyon sou pwodui, nou asire presizyon ak kalite nan tout pwojè nou tradui pou ou epi fè enfòmasyon an pase nan bònedifòm nan lang Kreyòl Ayisyen an ak Angle a.",
         icon: "ScrollText",
       },
       {
         name: "Fòmasyon",
         description:
-          "Kit w ap pare yon evènman enpòtan oswa objektif ou se kreye yon kanpay pou angaje ou oswa kominike ak kominote w la, nou ofri w solisyon adapte nan lang Kreyòl Ayisyen ak nan lang Angle an pou fòmasyon ak aprantisaj.",
+          "Kit w ap pare yon evènman enpòtan oswa objektif ou se kreye yon kanpay pou kominike ak kominote w la, nou ofri w solisyon lenguistik ki adapte nan lang Kreyòl Ayisyen ak nan lang Angle an pou fòmasyon ak aprantisaj.",
         icon: "BookCheck",
       },
       {
         name: "Entèpretasyon",
         description:
-          "Ou bezwen konprann tout sa k ap di nan lang Anglè a devan ou? Kit ou bezwen sipò ak sèvis entèpretasyon pou yon reyinyon biznis ak pèsonèl, randevou kay avoka, nan imigrasyon, oswa konsiltasyon medikal, entèprèt nou yo ka akonpaye ou e asire kominikasyon an pase klèman pa telefòn, souplas, oswa sou videyo.",
+          "Ou bezwen konprann tout sa k ap di nan lang Anglè devan ou? Kit ou bezwen sipò ak sèvis entèpretasyon pou yon reyinyon biznis ak pèsonèl, randevou kay avoka, nan imigrasyon, oswa konsiltasyon medikal, entèprèt nou yo ka akonpaye ou e asire kominikasyon an pase klèman pa telefòn, sou videyo oswa souplas.",
         icon: "NotebookPen",
       },
     ],

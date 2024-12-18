@@ -44,7 +44,7 @@ export const processTranslations = {
       {
         name: "Tradiksyon",
         description:
-          "Nou aplike yon pwosesis ki tabli sou rigè ak presizyon pou tradui tèks la pandan n ap prezève sans, nyans kilitirèl ak yon metòd kontwòl kalite pou asire pwojè w la korèk e ba ou satifaksyon.",
+          "Nou aplike yon pwosesis ki tabli sou rigè ak presizyon pou tradui tèks la pandan n ap prezève esans ak lide w vle pase a epi aplike etap kontwòl kalite nou an pou asire pwojè w la korèk e ba ou satifaksyon.",
       },
       {
         name: "Livrezon",
