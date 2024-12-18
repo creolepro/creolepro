@@ -96,3 +96,10 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+#client-solutions,
+#process,
+#choose,
+#contact-form {
+  scroll-margin-top: 100px;
+}
