@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
 import Typewriter from "typewriter-effect";
-import { getCalApi } from "@calcom/embed-react";
 import { useLanguage } from "@/hooks/use-language";
 import { heroTranslations } from "@/translations";
+import Link from "next/link";
 
 const scrollToSection = (id: string) => {
   const section = document.getElementById(id);
@@ -17,7 +17,6 @@ const scrollToSection = (id: string) => {
 
 export function Hero() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isClient, setIsClient] = useState(false);
   const { language } = useLanguage();
   const t = heroTranslations[language];
 
@@ -29,19 +28,6 @@ export function Hero() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    setIsClient(true);
-    (async function () {
-      const cal = await getCalApi({ namespace: "creolepro" });
-      cal("ui", {
-        theme: "light",
-        styles: { branding: { brandColor: "#1C66F9" } },
-        hideEventTypeDetails: false,
-        layout: "month_view",
-      });
-    })();
   }, []);
 
   return (
@@ -93,16 +79,14 @@ export function Hero() {
         >
           {t.cta.quote}
         </Button>
-        <div className="inline-flex rounded-full px-4 py-1.5 text-sm font-semibold transition bg-slate-100 text-slate-900 hover:bg-slate-200">
-          <button
-            data-cal-namespace="creolepro"
-            data-cal-link="creolepro/30min"
-            data-cal-config='{"layout":"month_view"}'
-            className="flex items-center gap-2"
-          >
-            {t.cta.expert}
-          </button>
-        </div>
+        <Link
+          href="https://cal.com/creolepro/30min"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex rounded-full px-4 py-1.5 text-sm font-semibold transition bg-slate-100 text-slate-900 hover:bg-slate-200"
+        >
+          {t.cta.expert}
+        </Link>
       </div>
     </Container>
   );
