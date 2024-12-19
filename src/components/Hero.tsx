@@ -34,7 +34,7 @@ export function Hero() {
   useEffect(() => {
     setIsClient(true);
     (async function () {
-      const cal = await getCalApi({});
+      const cal = await getCalApi({ namespace: "creolepro" });
       cal("ui", {
         theme: "light",
         styles: { branding: { brandColor: "#1C66F9" } },
@@ -95,7 +95,7 @@ export function Hero() {
         </Button>
         <div className="inline-flex rounded-full px-4 py-1.5 text-sm font-semibold transition bg-slate-100 text-slate-900 hover:bg-slate-200">
           <button
-            data-cal-namespace=""
+            data-cal-namespace="creolepro"
             data-cal-link="creolepro/30min"
             data-cal-config='{"layout":"month_view"}'
             className="flex items-center gap-2"
