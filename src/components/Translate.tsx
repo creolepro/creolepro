@@ -20,10 +20,8 @@ export default function Translator() {
   const [sourceLang, setSourceLang] = useState("en");
   const [targetLang, setTargetLang] = useState("ht");
 
-  // Simulate translation - replace with actual API call
   const translateText = useCallback(
     debounce(async (text: string) => {
-      // Replace this with actual translation API call
       setTranslatedText(`Translated: ${text}`);
     }, 500),
     []
