@@ -42,7 +42,7 @@ export default function Translator() {
   };
 
   return (
-    <main className="container mx-auto max-w-5xl p-4 min-h-[calc(100vh-80px)] flex flex-col justify-center -mt-32">
+    <main className="container mx-auto max-w-5xl p-4 min-h-[calc(100vh-80px)] flex flex-col justify-center mt-20 md:-mt-32">
       <div className="space-y-4">
         <Tabs defaultValue="text" className="w-full">
           <TabsList>
